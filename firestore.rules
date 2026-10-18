@@ -1,0 +1,68 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isValidId(id) {
+      return id is string && id.matches('^[a-zA-Z0-9_\\-]+$') && id.size() > 0 && id.size() <= 64;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidPhoto(data) {
+      return data.keys().hasAll(['photoId', 'url', 'title', 'target']) &&
+             data.keys().hasOnly(['photoId', 'url', 'title', 'target', 'updatedAt']) &&
+             data.photoId is string && data.photoId.size() > 0 && data.photoId.size() <= 64 &&
+             data.url is string && data.url.size() > 0 && data.url.size() <= 1000000 &&
+             data.title is string && data.title.size() <= 200 &&
+             data.target is string && data.target.size() <= 50 &&
+             (!('updatedAt' in data) || data.updatedAt is string);
+    }
+
+    function isValidSongCover(data) {
+      return data.keys().hasAll(['songId', 'coverUrl']) &&
+             data.keys().hasOnly(['songId', 'coverUrl', 'title', 'artist', 'side', 'updatedAt']) &&
+             data.songId is string && data.songId.size() > 0 && data.songId.size() <= 32 &&
+             data.coverUrl is string && data.coverUrl.size() > 0 && data.coverUrl.size() <= 1000000 &&
+             (!('title' in data) || (data.title is string && data.title.size() <= 200)) &&
+             (!('artist' in data) || (data.artist is string && data.artist.size() <= 200)) &&
+             (!('side' in data) || (data.side is string && (data.side == 'her' || data.side == 'his'))) &&
+             (!('updatedAt' in data) || data.updatedAt is string);
+    }
+
+    function isValidMusic(data) {
+      return data.keys().hasAll(['trackId', 'url']) &&
+             data.keys().hasOnly(['trackId', 'url', 'title', 'artist', 'volume', 'updatedAt']) &&
+             data.trackId is string && data.trackId.size() > 0 && data.trackId.size() <= 32 &&
+             data.url is string && data.url.size() > 0 && data.url.size() <= 1000000 &&
+             (!('title' in data) || (data.title is string && data.title.size() <= 200)) &&
+             (!('artist' in data) || (data.artist is string && data.artist.size() <= 200)) &&
+             (!('volume' in data) || (data.volume is number && data.volume >= 0 && data.volume <= 1)) &&
+             (!('updatedAt' in data) || data.updatedAt is string);
+    }
+
+    match /photos/{photoId} {
+      allow read: if true;
+      allow create, update: if isSignedIn() && isValidId(photoId) && isValidPhoto(request.resource.data);
+      allow delete: if isSignedIn() && isValidId(photoId);
+    }
+
+    match /songCovers/{songId} {
+      allow read: if true;
+      allow create, update: if isSignedIn() && isValidId(songId) && isValidSongCover(request.resource.data);
+      allow delete: if isSignedIn() && isValidId(songId);
+    }
+
+    match /music/{trackId} {
+      allow read: if true;
+      allow create, update: if isSignedIn() && isValidId(trackId) && isValidMusic(request.resource.data);
+      allow delete: if isSignedIn() && isValidId(trackId);
+    }
+
+    // Default deny for unmapped paths
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

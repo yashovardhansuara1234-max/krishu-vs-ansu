@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="carAmbient" cx="45%" cy="45%" r="65%">
+      <stop offset="0%" stopColor="#2A2A30" />
+      <stop offset="60%" stopColor="#17171C" />
+      <stop offset="100%" stopColor="#0B0B0E" />
+    </radialGradient>
+    <linearGradient id="skinTone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#D4A373" />
+      <stop offset="50%" stopColor="#B37D4E" />
+      <stop offset="100%" stopColor="#8C5835" />
+    </linearGradient>
+    <linearGradient id="shirtNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#1E293B" />
+      <stop offset="50%" stopColor="#0F172A" />
+      <stop offset="100%" stopColor="#020617" />
+    </linearGradient>
+    <pattern id="meshPattern" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.85" fill="#3F3F46" />
+    </pattern>
+  </defs>
+
+  <!-- Car Interior Ambient Background -->
+  <rect width="400" height="400" fill="url(#carAmbient)" />
+
+  <!-- Car Window Frame on Right Side with Black Sunshade Mesh -->
+  <path d="M220 0 Q340 30 380 200 L395 400 L210 400 Q190 200 220 0 Z" fill="#18181B" />
+  <!-- Mesh Sunshade Texture on Window -->
+  <path d="M225 10 Q335 40 375 195 L390 380 L220 380 Q200 195 225 10 Z" fill="url(#meshPattern)" opacity="0.65" />
+  <path d="M225 10 Q335 40 375 195 L390 380 L220 380 Q200 195 225 10 Z" fill="#000000" opacity="0.35" />
+  <!-- Sunshade Divider / Slat Bars -->
+  <line x1="220" y1="120" x2="360" y2="120" stroke="#27272A" stroke-width="2" />
+  <line x1="215" y1="230" x2="380" y2="230" stroke="#27272A" stroke-width="2" />
+  <line x1="210" y1="330" x2="390" y2="330" stroke="#27272A" stroke-width="2" />
+
+  <!-- Car Seat Headrest Silhouette (Behind Neck) -->
+  <rect x="180" y="240" width="130" height="160" rx="20" fill="#0D0D11" stroke="#27272A" stroke-width="2" />
+
+  <!-- Navy Blue Vertically Striped Shirt (Collared) -->
+  <path d="M0 320 Q60 300 135 320 L160 380 L180 400 L0 400 Z" fill="url(#shirtNavy)" />
+  <path d="M135 320 Q200 320 280 340 L340 400 L160 400 Z" fill="url(#shirtNavy)" />
+  <!-- Fine White Vertical Pinstripes on Shirt -->
+  <g stroke="#94A3B8" stroke-width="1.2" opacity="0.75">
+    <line x1="15" y1="320" x2="15" y2="400" />
+    <line x1="30" y1="315" x2="30" y2="400" />
+    <line x1="45" y1="310" x2="45" y2="400" />
+    <line x1="60" y1="308" x2="60" y2="400" />
+    <line x1="75" y1="308" x2="75" y2="400" />
+    <line x1="90" y1="310" x2="90" y2="400" />
+    <line x1="105" y1="315" x2="105" y2="400" />
+    <line x1="120" y1="320" x2="120" y2="400" />
+    <line x1="165" y1="330" x2="165" y2="400" />
+    <line x1="180" y1="332" x2="180" y2="400" />
+    <line x1="195" y1="335" x2="195" y2="400" />
+    <line x1="210" y1="338" x2="210" y2="400" />
+    <line x1="225" y1="340" x2="225" y2="400" />
+    <line x1="240" y1="345" x2="240" y2="400" />
+  </g>
+  <!-- Shirt Collar Bands -->
+  <path d="M90 310 L135 345 L115 380" fill="none" stroke="#334155" stroke-width="2" />
+  <path d="M170 310 L135 345 L155 380" fill="none" stroke="#334155" stroke-width="2" />
+
+  <!-- Silver Chain Necklace visible around neck -->
+  <path d="M115 315 Q135 338 150 315" fill="none" stroke="#E2E8F0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2,3" />
+
+  <!-- Strong Neck -->
+  <path d="M70 250 L70 330 L160 330 L160 250 Z" fill="url(#skinTone)" />
+
+  <!-- Face Close-Up (Left-to-Center Selfie Perspective) -->
+  <path d="M-10 120 Q60 120 120 150 Q160 190 150 250 Q120 310 50 320 L-10 320 Z" fill="url(#skinTone)" />
+  <!-- Cheek & Jawline shading -->
+  <path d="M120 220 Q145 270 90 315" fill="none" stroke="#8C5835" stroke-width="2" opacity="0.4" />
+
+  <!-- Right Ear -->
+  <ellipse cx="152" cy="225" rx="14" ry="24" fill="url(#skinTone)" stroke="#78350F" stroke-width="1.2" />
+  <path d="M150 215 Q158 225 152 235" fill="none" stroke="#78350F" stroke-width="1.5" />
+
+  <!-- White Wireless In-Ear Earbud (AirPod) in Right Ear -->
+  <ellipse cx="147" cy="228" rx="5" ry="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.8" />
+  <path d="M147 232 L144 248" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+  <circle cx="144" cy="248" r="1.5" fill="#CBD5E1" />
+
+  <!-- Eyes & Eyebrow (Warm, engaging eye contact) -->
+  <ellipse cx="65" cy="195" rx="15" ry="9" fill="#FFFFFF" opacity="0.95" />
+  <circle cx="65" cy="195" r="6" fill="#3D2314" />
+  <circle cx="65" cy="195" r="3" fill="#09090B" />
+  <circle cx="63" cy="193" r="1.5" fill="#FFFFFF" />
+  <!-- Eyelid & Lash line -->
+  <path d="M48 194 Q65 186 82 195" fill="none" stroke="#451A03" stroke-width="2.5" stroke-linecap="round" />
+  <!-- Eyebrow -->
+  <path d="M40 175 Q68 165 92 178" fill="none" stroke="#1C1917" stroke-width="4.5" stroke-linecap="round" />
+
+  <!-- Nose & Smile (Natural, candid smirk) -->
+  <path d="M10 200 Q25 240 28 250 Q18 258 5 258" fill="none" stroke="#8C5835" stroke-width="2" />
+  <path d="M5 285 Q25 292 45 285" fill="none" stroke="#78350F" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M42 284 Q48 280 50 285" fill="none" stroke="#78350F" stroke-width="2" stroke-linecap="round" />
+  <!-- Subtle natural mustache/shadow -->
+  <path d="M5 272 Q25 275 42 272" fill="none" stroke="#292524" stroke-width="1.8" opacity="0.45" />
+
+  <!-- Natural Dark Wavy Hairstyle -->
+  <path d="M-10 120 C-10 60, 40 30, 90 40 C140 50, 160 100, 155 160 C140 125, 110 115, 70 120 C30 125, 0 145, -10 160 Z" fill="#0F172A" />
+  <path d="M20 70 C50 45, 100 45, 130 65 C120 85, 90 75, 50 85 Z" fill="#1E293B" />
+  <path d="M-10 100 C15 75, 75 70, 110 95 C90 105, 55 95, 25 105 Z" fill="#09090B" />
+
+  <!-- Album Badge & Typography -->
+  <g opacity="0.5" fill="#FFFFFF" font-family="monospace" font-size="8" letter-spacing="2">
+    <text x="20" y="30">[CANDID // 33 RPM]</text>
+    <text x="20" y="44">BADMASH · HANGOVA</text>
+    <text x="310" y="30">SIDE A #03</text>
+  </g>
+</svg>

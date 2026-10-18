@@ -1,0 +1,6 @@
+{
+  "name": "Project Krishu — Minimalist Pastel Edition",
+  "description": "An ultra-clean, breathable, animated birthday surprise web application for Krishu with minimalist Spotify cards and fluid motion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="carGlow" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stopColor="#2A2A2E" />
+      <stop offset="65%" stopColor="#141416" />
+      <stop offset="100%" stopColor="#08080A" />
+    </radialGradient>
+    <linearGradient id="shirtShading" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FFFFFF" />
+      <stop offset="60%" stopColor="#E4E4E7" />
+      <stop offset="100%" stopColor="#A1A1AA" />
+    </linearGradient>
+    <linearGradient id="batSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#F4F4F5" />
+      <stop offset="45%" stopColor="#D4D4D8" />
+      <stop offset="70%" stopColor="#71717A" />
+      <stop offset="100%" stopColor="#27272A" />
+    </linearGradient>
+    <linearGradient id="lensGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#09090B" />
+      <stop offset="100%" stopColor="#18181B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Moody Noir Car Interior Background -->
+  <rect width="400" height="400" fill="url(#carGlow)" />
+
+  <!-- Car Window & Back Seat Frame Outline -->
+  <path d="M40 0 L15 150 L15 400 L80 400 L60 180 L80 0 Z" fill="#18181B" opacity="0.6" />
+  <path d="M340 0 L370 120 L370 400 L320 400 L335 150 L320 0 Z" fill="#18181B" opacity="0.5" />
+  <!-- Car Headrest silhouettes in background -->
+  <rect x="50" y="70" width="55" height="120" rx="14" fill="#0D0D0F" stroke="#27272A" stroke-width="1.5" />
+  <rect x="295" y="70" width="55" height="120" rx="14" fill="#0D0D0F" stroke="#27272A" stroke-width="1.5" />
+
+  <!-- Car Door Frame & Roof Arc -->
+  <path d="M10 0 Q200 40 390 0" fill="none" stroke="#3F3F46" stroke-width="2.5" opacity="0.5" />
+
+  <!-- Seated Figure Torso & Legs (Dark Dress Trousers) -->
+  <path d="M90 280 L50 400 L170 400 L180 320 Z" fill="#18181B" />
+  <path d="M310 280 L350 400 L230 400 L220 320 Z" fill="#18181B" />
+
+  <!-- Crisp White Button-Down Shirt (Sleeves Rolled Up) -->
+  <!-- Main Body -->
+  <path d="M140 145 L110 280 L290 280 L260 145 L200 170 Z" fill="url(#shirtShading)" />
+  <!-- Shirt Placket & Fold Creases -->
+  <line x1="200" y1="170" x2="200" y2="280" stroke="#71717A" stroke-width="2" />
+  <circle cx="200" cy="200" r="1.5" fill="#27272A" />
+  <circle cx="200" cy="230" r="1.5" fill="#27272A" />
+  <circle cx="200" cy="260" r="1.5" fill="#27272A" />
+  <!-- Chest Pocket Left -->
+  <path d="M218 190 L245 190 L245 220 L231 228 L218 220 Z" fill="none" stroke="#A1A1AA" stroke-width="1.2" />
+
+  <!-- Rolled Up Arms (Forearms exposed) -->
+  <!-- Left Arm (Holding Knee) -->
+  <path d="M140 145 L105 200 L130 265 L150 255 L125 195 Z" fill="#FFFFFF" />
+  <ellipse cx="130" cy="265" rx="12" ry="8" fill="#E4E4E7" />
+  <!-- Bare Forearm -->
+  <path d="M130 265 L150 330 L175 320 L145 260 Z" fill="#52525B" />
+  <!-- Silver Bracelet & Rings -->
+  <circle cx="156" cy="318" r="6" fill="none" stroke="#FFFFFF" stroke-width="2.5" />
+  <ellipse cx="166" cy="336" rx="3" ry="2" fill="#E4E4E7" />
+
+  <!-- Right Arm (Resting on Bat) -->
+  <path d="M260 145 L295 200 L270 265 L250 255 L275 195 Z" fill="#FFFFFF" />
+  <!-- Forearm & Watch -->
+  <path d="M270 265 L250 330 L225 320 L255 260 Z" fill="#52525B" />
+  <!-- Metallic Chronograph Watch -->
+  <rect x="250" y="278" width="14" height="18" rx="3" fill="#D4D4D8" stroke="#18181B" stroke-width="1" />
+  <circle cx="257" cy="287" r="5" fill="#18181B" stroke="#FFFFFF" stroke-width="0.8" />
+
+  <!-- Hands clasping baseball bat -->
+  <ellipse cx="200" cy="325" rx="18" ry="14" fill="#3F3F46" />
+
+  <!-- Iconic Baseball Bat (Vertical between knees) -->
+  <path d="M194 400 L194 330 L191 290 L191 250 L209 250 L209 290 L206 330 L206 400 Z" fill="url(#batSheen)" stroke="#18181B" stroke-width="1.5" />
+  <!-- Bat Handle Grip Tape -->
+  <path d="M192 290 L208 300 M192 300 L208 310 M192 310 L208 320 M192 320 L208 330" stroke="#09090B" stroke-width="1.5" />
+  <!-- Bat Knob Bottom & Top Tip -->
+  <line x1="190" y1="250" x2="210" y2="250" stroke="#E4E4E7" stroke-width="3" />
+
+  <!-- Open V-Collar -->
+  <path d="M175 145 L200 190 L225 145" fill="#3F3F46" />
+  <path d="M175 145 L190 185 L165 175 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1" />
+  <path d="M225 145 L210 185 L235 175 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1" />
+
+  <!-- Neck & Jawline -->
+  <path d="M185 110 L185 155 L215 155 L215 110 Z" fill="#52525B" />
+  <path d="M165 85 Q165 145 200 152 Q235 145 235 85 Z" fill="#3F3F46" stroke="#27272A" stroke-width="1" />
+
+  <!-- Badmash Confident Smirk & Cheekbones -->
+  <path d="M190 128 Q200 134 214 127" fill="none" stroke="#71717A" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M212 127 Q218 123 222 128" fill="none" stroke="#71717A" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Iconic Dark Round Aviator Sunglasses -->
+  <g id="sunglasses">
+    <!-- Frame Bar -->
+    <path d="M168 94 Q200 88 232 94" fill="none" stroke="#D4D4D8" stroke-width="2" />
+    <line x1="194" y1="92" x2="206" y2="92" stroke="#D4D4D8" stroke-width="2" />
+    <!-- Left Lens -->
+    <ellipse cx="182" cy="98" rx="14" ry="12" fill="url(#lensGrad)" stroke="#A1A1AA" stroke-width="1.5" />
+    <!-- White Glare Reflection Left -->
+    <path d="M176 92 L186 92 L178 105 L172 105 Z" fill="#FFFFFF" opacity="0.3" />
+    <!-- Right Lens -->
+    <ellipse cx="218" cy="98" rx="14" ry="12" fill="url(#lensGrad)" stroke="#A1A1AA" stroke-width="1.5" />
+    <!-- White Glare Reflection Right -->
+    <path d="M212 92 L222 92 L214 105 L208 105 Z" fill="#FFFFFF" opacity="0.3" />
+  </g>
+
+  <!-- Voluminous Dark Hairstyle -->
+  <path d="M158 80 C155 35, 190 25, 230 30 C248 32, 252 60, 245 85 C235 60, 210 50, 180 55 C165 58, 158 70, 158 80 Z" fill="#09090B" />
+  <path d="M165 60 C180 40, 220 35, 240 50 C230 65, 205 60, 175 68 Z" fill="#18181B" />
+
+  <!-- Vintage Film Details & Typography Overlay -->
+  <g opacity="0.4" fill="#FFFFFF" font-family="monospace" font-size="8" letter-spacing="2">
+    <text x="20" y="30">[35MM // 400 ISO]</text>
+    <text x="20" y="44">BADMASH · WARNING</text>
+    <text x="310" y="30">SIDE A #01</text>
+  </g>
+
+  <!-- Film Edge Sprockets -->
+  <g opacity="0.12" fill="#FFFFFF">
+    <rect x="8" y="70" width="6" height="12" rx="1" />
+    <rect x="8" y="100" width="6" height="12" rx="1" />
+    <rect x="8" y="130" width="6" height="12" rx="1" />
+    <rect x="8" y="160" width="6" height="12" rx="1" />
+    <rect x="8" y="190" width="6" height="12" rx="1" />
+    <rect x="8" y="220" width="6" height="12" rx="1" />
+    <rect x="8" y="250" width="6" height="12" rx="1" />
+  </g>
+</svg>

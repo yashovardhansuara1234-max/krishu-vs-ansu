@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <!-- Background Pastel Dreamscape -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF1F2" />
+      <stop offset="50%" stop-color="#FCE7F3" />
+      <stop offset="100%" stop-color="#EDE9FE" />
+    </linearGradient>
+
+    <!-- Warm Golden Hour Glow -->
+    <radialGradient id="sunGlow" cx="20%" cy="15%" r="60%">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#FBCFE8" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#EDE9FE" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Skin Tone Gradient -->
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE4D6" />
+      <stop offset="100%" stop-color="#FED7AA" />
+    </linearGradient>
+
+    <!-- Hair Depth Gradient -->
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D1B22" />
+      <stop offset="50%" stop-color="#4A2835" />
+      <stop offset="100%" stop-color="#1E1117" />
+    </linearGradient>
+
+    <!-- Hair Highlight -->
+    <linearGradient id="hairHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#B7791F" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#4A2835" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Soft Sweater Gradient -->
+    <linearGradient id="sweaterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB" />
+      <stop offset="50%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#FDE68A" />
+    </linearGradient>
+
+    <!-- Soft Shadow Filter -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#831843" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="500" fill="url(#bgGrad)" />
+  <rect width="400" height="500" fill="url(#sunGlow)" />
+
+  <!-- Soft Dreamy Bokeh Circles -->
+  <circle cx="80" cy="90" r="45" fill="#FFF" opacity="0.4" />
+  <circle cx="340" cy="120" r="35" fill="#FEF08A" opacity="0.35" />
+  <circle cx="60" cy="380" r="50" fill="#FBCFE8" opacity="0.4" />
+  <circle cx="330" cy="390" r="65" fill="#DDD6FE" opacity="0.4" />
+  <circle cx="280" cy="70" r="20" fill="#FFF" opacity="0.5" />
+
+  <!-- Back Hair Mass -->
+  <path d="M120 180 C100 240 90 320 110 420 C140 450 180 460 200 460 C220 460 260 450 290 420 C310 320 300 240 280 180 Z" fill="url(#hairGrad)" />
+
+  <!-- Cozy Knit Sweater Shoulders & Torso -->
+  <path d="M90 500 C90 410 135 370 200 370 C265 370 310 410 310 500 Z" fill="url(#sweaterGrad)" filter="url(#softShadow)" />
+  <!-- Sweater Ribbed Texture Lines -->
+  <path d="M150 400 Q200 420 250 400" fill="none" stroke="#D97706" stroke-width="1.5" opacity="0.25" />
+  <path d="M140 425 Q200 445 260 425" fill="none" stroke="#D97706" stroke-width="1.5" opacity="0.2" />
+  <path d="M130 455 Q200 475 270 455" fill="none" stroke="#D97706" stroke-width="1.5" opacity="0.2" />
+
+  <!-- Neck & Collarbone -->
+  <path d="M175 310 L175 385 Q200 395 225 385 L225 310 Z" fill="url(#skinGrad)" />
+  <path d="M185 365 Q200 372 215 365" fill="none" stroke="#E11D48" stroke-width="1.2" opacity="0.25" stroke-linecap="round" />
+
+  <!-- Delicate Gold Heart Necklace -->
+  <path d="M176 345 Q200 365 224 345" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.7" />
+  <path d="M200 358 C198 355 194 355 194 358 C194 361 200 365 200 365 C200 365 206 361 206 358 C206 355 202 355 200 358 Z" fill="#F59E0B" opacity="0.9" />
+
+  <!-- Face Shape -->
+  <path d="M140 190 C140 140 160 120 200 120 C240 120 260 140 260 190 C260 250 235 295 200 295 C165 295 140 250 140 190 Z" fill="url(#skinGrad)" filter="url(#softShadow)" />
+
+  <!-- Rosy Cheeks (Gentle Blush) -->
+  <ellipse cx="163" cy="225" rx="14" ry="9" fill="#FB7185" opacity="0.35" />
+  <ellipse cx="237" cy="225" rx="14" ry="9" fill="#FB7185" opacity="0.35" />
+
+  <!-- Left Eyebrow -->
+  <path d="M156 182 Q172 176 186 181" fill="none" stroke="#4A2835" stroke-width="2.5" stroke-linecap="round" />
+  <!-- Right Eyebrow -->
+  <path d="M214 181 Q228 176 244 182" fill="none" stroke="#4A2835" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Left Eye: Warm, expressive, almond shape with cute lashes -->
+  <path d="M158 196 Q172 188 184 196" fill="none" stroke="#2D1B22" stroke-width="2.8" stroke-linecap="round" />
+  <path d="M161 197 Q172 205 183 197" fill="none" stroke="#4A2835" stroke-width="1.5" stroke-linecap="round" />
+  <circle cx="171" cy="197" r="4.5" fill="#3B1D28" />
+  <circle cx="173" cy="195" r="1.5" fill="#FFF" />
+  <!-- Eyelashes -->
+  <path d="M182 193 L186 190" stroke="#2D1B22" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M184 196 L188 195" stroke="#2D1B22" stroke-width="1.8" stroke-linecap="round" />
+
+  <!-- Right Eye -->
+  <path d="M216 196 Q228 188 242 196" fill="none" stroke="#2D1B22" stroke-width="2.8" stroke-linecap="round" />
+  <path d="M217 197 Q228 205 239 197" fill="none" stroke="#4A2835" stroke-width="1.5" stroke-linecap="round" />
+  <circle cx="229" cy="197" r="4.5" fill="#3B1D28" />
+  <circle cx="231" cy="195" r="1.5" fill="#FFF" />
+  <!-- Eyelashes -->
+  <path d="M240 193 L244 190" stroke="#2D1B22" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M242 196 L246 195" stroke="#2D1B22" stroke-width="1.8" stroke-linecap="round" />
+
+  <!-- Cute Delicate Nose -->
+  <path d="M198 215 Q200 223 203 223" fill="none" stroke="#E11D48" stroke-width="1.8" stroke-linecap="round" opacity="0.6" />
+
+  <!-- Sweet Happy Smile -->
+  <path d="M182 248 Q200 262 218 248" fill="none" stroke="#BE185D" stroke-width="3" stroke-linecap="round" />
+  <!-- Lip Color Soft Shading -->
+  <path d="M185 249 Q200 260 215 249 Q200 254 185 249 Z" fill="#F43F5E" opacity="0.3" />
+
+  <!-- Flowing Front Hair & Curtain Bangs -->
+  <path d="M136 180 C136 120 160 90 200 90 C240 90 264 120 264 180 C264 195 258 210 254 225 C250 240 248 260 255 290 C262 320 270 360 265 400 C258 405 248 395 245 370 C242 340 245 300 240 260 C238 230 230 200 220 180 C210 160 200 150 190 150 C180 150 170 160 160 180 C155 190 148 230 146 260 C144 290 146 340 143 370 C140 395 130 405 125 400 C120 360 128 320 135 290 C142 260 140 240 136 225 Z" fill="url(#hairGrad)" filter="url(#softShadow)" />
+
+  <!-- Hair Gloss / Sunlight Highlights -->
+  <path d="M160 115 Q200 100 240 115" fill="none" stroke="url(#hairHighlight)" stroke-width="8" opacity="0.7" stroke-linecap="round" />
+  <path d="M246 200 Q254 250 256 310" fill="none" stroke="#F472B6" stroke-width="1.5" opacity="0.35" stroke-linecap="round" />
+  <path d="M144 200 Q136 250 134 310" fill="none" stroke="#F472B6" stroke-width="1.5" opacity="0.35" stroke-linecap="round" />
+
+  <!-- Cute Daisy Hair Clip on the Left -->
+  <g transform="translate(142, 160)">
+    <circle cx="0" cy="0" r="4.5" fill="#F59E0B" />
+    <ellipse cx="0" cy="-9" rx="3" ry="5" fill="#FFF" />
+    <ellipse cx="7" cy="-6" rx="3" ry="5" fill="#FFF" transform="rotate(45 7 -6)" />
+    <ellipse cx="9" cy="0" rx="5" ry="3" fill="#FFF" />
+    <ellipse cx="7" cy="6" rx="3" ry="5" fill="#FFF" transform="rotate(-45 7 6)" />
+    <ellipse cx="0" cy="9" rx="3" ry="5" fill="#FFF" />
+    <ellipse cx="-7" cy="6" rx="3" ry="5" fill="#FFF" transform="rotate(45 -7 6)" />
+    <ellipse cx="-9" cy="0" rx="5" ry="3" fill="#FFF" />
+    <ellipse cx="-7" cy="-6" rx="3" ry="5" fill="#FFF" transform="rotate(-45 -7 -6)" />
+  </g>
+
+  <!-- Sparkles & Tiny Floating Heart -->
+  <path d="M290 170 Q292 165 297 165 Q292 165 290 160 Q288 165 283 165 Q288 165 290 170 Z" fill="#F472B6" opacity="0.75" />
+  <path d="M105 230 Q107 226 111 226 Q107 226 105 222 Q103 226 99 226 Q103 226 105 230 Z" fill="#F59E0B" opacity="0.8" />
+  <path d="M285 240 C283 236 278 236 278 240 C278 244 285 249 285 249 C285 249 292 244 292 240 C292 236 287 236 285 240 Z" fill="#FB7185" opacity="0.7" />
+
+  <!-- Bottom Vintage Date Stamp: '20.10 // KRISHU' -->
+  <text x="20" y="482" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#BE185D" letter-spacing="2" opacity="0.75">20.10 · KRISHU</text>
+  <text x="380" y="482" text-anchor="end" font-family="'Dancing Script', cursive" font-size="16" font-weight="700" fill="#E11D48" opacity="0.8">forever 20 ♡</text>
+</svg>

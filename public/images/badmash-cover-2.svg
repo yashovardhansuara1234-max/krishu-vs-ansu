@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="wallGlow" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stopColor="#3F3F46" />
+      <stop offset="50%" stopColor="#1E1E22" />
+      <stop offset="100%" stopColor="#0B0B0D" />
+    </radialGradient>
+    <linearGradient id="teeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FFFFFF" />
+      <stop offset="70%" stopColor="#E4E4E7" />
+      <stop offset="100%" stopColor="#A1A1AA" />
+    </linearGradient>
+    <linearGradient id="denimGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#3F3F46" />
+      <stop offset="100%" stopColor="#18181B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Moody Vintage Monochrome Background with Grain Wall Texture -->
+  <rect width="400" height="400" fill="url(#wallGlow)" />
+
+  <!-- Studio Wire / Cord Hanging vertically in background -->
+  <line x1="140" y1="0" x2="140" y2="70" stroke="#71717A" stroke-width="1.5" opacity="0.6" />
+  <circle cx="140" cy="72" r="3" fill="#A1A1AA" />
+
+  <!-- Motorcycle / Moped Seat Base Silhouette -->
+  <path d="M40 370 Q180 340 380 390 L380 400 L40 400 Z" fill="#09090B" />
+  <path d="M40 370 Q180 340 380 390" fill="none" stroke="#27272A" stroke-width="3" />
+
+  <!-- Seated Figure Lower Body (Denim Jeans) -->
+  <path d="M50 240 Q150 240 280 250 L340 270 Q370 340 290 390 L160 390 L60 300 Z" fill="url(#denimGrad)" stroke="#27272A" stroke-width="1.5" />
+  <!-- Denim Seams & Creases -->
+  <path d="M120 260 Q180 275 250 265" fill="none" stroke="#52525B" stroke-width="1.5" />
+  <path d="M150 275 L220 370" fill="none" stroke="#52525B" stroke-width="1.2" stroke-dasharray="2,3" />
+
+  <!-- White Oversized Streetwear T-Shirt (Drop Shoulder) -->
+  <path d="M40 150 Q110 140 160 145 L270 215 L230 290 L140 280 L40 260 Z" fill="url(#teeGrad)" />
+  <!-- T-Shirt Crewneck Collar Band -->
+  <path d="M110 145 Q135 175 165 145" fill="none" stroke="#71717A" stroke-width="4" stroke-linecap="round" />
+  <!-- Silver Chain Necklace around neck -->
+  <path d="M118 150 Q138 185 160 150" fill="none" stroke="#E4E4E7" stroke-width="2" stroke-linecap="round" stroke-dasharray="2,2" />
+
+  <!-- Streetwear Chest Graphic ("FROSTING / ICE AM") -->
+  <g transform="translate(180, 195) rotate(-5)" opacity="0.85">
+    <text x="0" y="0" font-family="sans-serif" font-weight="900" font-size="11" fill="#18181B" letter-spacing="1">FROSTING</text>
+    <text x="3" y="10" font-family="sans-serif" font-weight="700" font-size="9" fill="#27272A" letter-spacing="0.5">SOCIETY</text>
+    <text x="2" y="17" font-family="monospace" font-size="6" fill="#3F3F46">ICE · AM</text>
+  </g>
+
+  <!-- Left Arm (Holding Prop/Gun in Lap) -->
+  <path d="M40 260 L45 340 L80 340 L80 270 Z" fill="#52525B" />
+  <!-- Wristband / Bracelet on Left Wrist -->
+  <rect x="42" y="315" width="22" height="6" rx="2" fill="#18181B" stroke="#A1A1AA" stroke-width="0.75" />
+  <!-- Watch on Right Wrist -->
+  <circle cx="175" cy="325" r="9" fill="#18181B" stroke="#E4E4E7" stroke-width="1.5" />
+  <circle cx="175" cy="325" r="5" fill="#3F3F46" />
+
+  <!-- Right Forearm reaching into lap -->
+  <path d="M250 220 L180 320 L160 310 L230 210 Z" fill="#52525B" />
+
+  <!-- Two Hands Clasping Retro Silhouette Prop Gun -->
+  <ellipse cx="115" cy="350" rx="20" ry="16" fill="#3F3F46" />
+  <!-- Gun Silhouette (Pointing downward into lap) -->
+  <path d="M100 330 L125 330 L125 385 L112 385 L112 360 L95 345 Z" fill="#09090B" stroke="#52525B" stroke-width="1.2" />
+  <!-- Trigger Guard & Barrel Vent -->
+  <rect x="105" y="342" width="6" height="8" rx="2" fill="none" stroke="#71717A" stroke-width="1" />
+  <line x1="120" y1="340" x2="120" y2="380" stroke="#3F3F46" stroke-width="1" />
+
+  <!-- Strong Neck in 3/4 Side Profile -->
+  <path d="M125 105 L125 150 L165 145 L180 115 Z" fill="#52525B" />
+
+  <!-- Head & Face in Right 3/4 Profile (Sharp Jawline, Eyebrow, Lips) -->
+  <path d="M135 75 Q150 95 195 95 Q230 95 240 105 Q245 120 235 130 Q225 135 230 145 Q210 160 170 150 Z" fill="#3F3F46" />
+  <!-- Ear in Profile -->
+  <ellipse cx="150" cy="115" rx="8" ry="12" fill="#3F3F46" stroke="#27272A" stroke-width="1.2" />
+  <path d="M150 109 Q153 115 150 121" fill="none" stroke="#27272A" stroke-width="1" />
+
+  <!-- Profile Nose & Lips Contour -->
+  <path d="M225 90 L245 110 L235 118 L242 125 L230 135" fill="none" stroke="#27272A" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Modern Sharp Taper Fade Haircut -->
+  <!-- Low Fade Gradient -->
+  <path d="M130 95 C130 120, 140 125, 155 125 C145 115, 145 100, 140 90 Z" fill="#18181B" opacity="0.7" />
+  <!-- Dark Textured Top Hair -->
+  <path d="M125 90 C120 40, 160 20, 215 25 C235 28, 248 55, 235 85 C220 70, 195 72, 160 75 C140 76, 130 85, 125 90 Z" fill="#09090B" />
+  <path d="M135 70 C150 45, 185 35, 220 40 C205 55, 175 55, 150 65 Z" fill="#18181B" />
+
+  <!-- Vintage Film Grain & Typography -->
+  <g opacity="0.4" fill="#FFFFFF" font-family="monospace" font-size="8" letter-spacing="2">
+    <text x="20" y="30">[35MM // 800 ISO]</text>
+    <text x="20" y="44">BADMASH · BAUJI</text>
+    <text x="310" y="30">SIDE A #02</text>
+  </g>
+
+  <!-- Film Edge Sprockets -->
+  <g opacity="0.12" fill="#FFFFFF">
+    <rect x="8" y="70" width="6" height="12" rx="1" />
+    <rect x="8" y="100" width="6" height="12" rx="1" />
+    <rect x="8" y="130" width="6" height="12" rx="1" />
+    <rect x="8" y="160" width="6" height="12" rx="1" />
+    <rect x="8" y="190" width="6" height="12" rx="1" />
+    <rect x="8" y="220" width="6" height="12" rx="1" />
+  </g>
+</svg>

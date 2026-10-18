@@ -1,0 +1,116 @@
+{
+  "entities": {
+    "Photo": {
+      "title": "Photo",
+      "description": "A photo or memory asset stored permanently in Firebase",
+      "type": "object",
+      "properties": {
+        "photoId": {
+          "type": "string",
+          "description": "Unique identifier for the photo placement slot"
+        },
+        "url": {
+          "type": "string",
+          "description": "Image URL, asset path, or cloud image URL"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title or caption of the photo"
+        },
+        "target": {
+          "type": "string",
+          "description": "Target component (e.g. id_card, polaroid, memory)"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp string of when the photo was saved"
+        }
+      },
+      "required": ["photoId", "url", "title", "target"]
+    },
+    "SongCover": {
+      "title": "SongCover",
+      "description": "Permanent cover art for a music plaque shown on every device",
+      "type": "object",
+      "properties": {
+        "songId": {
+          "type": "string",
+          "description": "Identifier of the song plaque (e.g. h1, h2, h3, b1, b2, b3)"
+        },
+        "coverUrl": {
+          "type": "string",
+          "description": "Public URL or image asset path of the cover art"
+        },
+        "title": {
+          "type": "string",
+          "description": "Track title"
+        },
+        "artist": {
+          "type": "string",
+          "description": "Track artist"
+        },
+        "side": {
+          "type": "string",
+          "description": "her or his"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp string of when the cover was saved"
+        }
+      },
+      "required": ["songId", "coverUrl"]
+    },
+    "MusicTrack": {
+      "title": "MusicTrack",
+      "description": "Permanent music track configuration stored in Firebase",
+      "type": "object",
+      "properties": {
+        "trackId": {
+          "type": "string",
+          "description": "Unique key for track (e.g. finale)"
+        },
+        "url": {
+          "type": "string",
+          "description": "Audio file URL or path"
+        },
+        "title": {
+          "type": "string",
+          "description": "Song title"
+        },
+        "artist": {
+          "type": "string",
+          "description": "Artist name"
+        },
+        "volume": {
+          "type": "number",
+          "description": "Playback volume between 0.0 and 1.0"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp string"
+        }
+      },
+      "required": ["trackId", "url"]
+    }
+  },
+  "firestore": {
+    "/photos/{photoId}": {
+      "schema": {
+        "$ref": "#/entities/Photo"
+      },
+      "description": "Collection of permanent photos accessible across all devices"
+    },
+    "/songCovers/{songId}": {
+      "schema": {
+        "$ref": "#/entities/SongCover"
+      },
+      "description": "Collection of permanent song plaque covers accessible across all devices"
+    },
+    "/music/{trackId}": {
+      "schema": {
+        "$ref": "#/entities/MusicTrack"
+      },
+      "description": "Collection of permanent soundtrack audio tracks stored in Firebase"
+    }
+  }
+}
