@@ -49,9 +49,12 @@ export interface AppConfig {
 
 export function formatGoogleDriveUrl(url: string): string {
   if (!url) return url;
-  const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  const match =
+    url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) ||
+    url.match(/[?&]id=([a-zA-Z0-9_-]+)/) ||
+    url.match(/googleusercontent\.com\/d\/([a-zA-Z0-9_-]+)/);
   if (match && match[1]) {
-    return `https://lh3.googleusercontent.com/d/${match[1]}`;
+    return `/api/drive-image?id=${match[1]}`;
   }
   return url;
 }
@@ -85,7 +88,7 @@ export const APP_CONFIG: AppConfig = {
       id: "h1",
       title: "pretty",
       artist: "JVKE",
-      cover: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600",
+      cover: "/images/her1.jpg",
       audio: "/audio/her1.mp3",
       duration: "02:37",
       synthNotes: [329.63, 415.30, 493.88, 659.25], // E major bright melody

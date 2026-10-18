@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 /**
  * High-res, graceful SVG artwork components adhering strictly to the
@@ -111,6 +111,10 @@ export const HimGangsterVisual: React.FC<{ src?: string }> = ({ src }) => {
 export const HerCuteVisual: React.FC<{ src?: string; showLabels?: boolean }> = ({ src, showLabels = true }) => {
   const [loadError, setLoadError] = useState(false);
 
+  useEffect(() => {
+    setLoadError(false);
+  }, [src]);
+
   if (src && !loadError) {
     return (
       <img
@@ -168,6 +172,10 @@ export const CardCoverArt: React.FC<{
   theme?: 'pink' | 'lavender';
 }> = ({ src, title, artist, theme = 'pink' }) => {
   const [loadError, setLoadError] = useState(false);
+
+  useEffect(() => {
+    setLoadError(false);
+  }, [src]);
 
   if (src && !loadError) {
     return (

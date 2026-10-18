@@ -116,7 +116,7 @@ export const View2SplitContrast: React.FC<View2Props> = ({ onBack, onNext }) => 
   const [himPhoto, setHimPhoto] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('vs_photo_him');
-      if (saved && !saved.endsWith('.jpg')) return formatGoogleDriveUrl(saved);
+      if (saved) return formatGoogleDriveUrl(saved);
     }
     return formatGoogleDriveUrl(APP_CONFIG.vsPhotos.himGangster || '/images/him-bw.svg');
   });
@@ -124,10 +124,9 @@ export const View2SplitContrast: React.FC<View2Props> = ({ onBack, onNext }) => 
   const [herPhoto, setHerPhoto] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('vs_photo_her');
-      if (saved && !saved.endsWith('.jpg')) return formatGoogleDriveUrl(saved);
-      // Auto-detect photo added in View 1 if present
+      if (saved) return formatGoogleDriveUrl(saved);
       const v1Saved = localStorage.getItem('krishu_uploaded_photo');
-      if (v1Saved && !v1Saved.endsWith('.jpg')) return formatGoogleDriveUrl(v1Saved);
+      if (v1Saved) return formatGoogleDriveUrl(v1Saved);
     }
     return formatGoogleDriveUrl(APP_CONFIG.vsPhotos.herCute || '/images/krishu-id.svg');
   });
@@ -140,12 +139,12 @@ export const View2SplitContrast: React.FC<View2Props> = ({ onBack, onNext }) => 
   const [isDraggingOver, setIsDraggingOver] = useState<'him' | 'her' | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  // Real-time synchronization with Firestore photos
+  // Real-time synchronization with Firestore photos across all devices
   useEffect(() => {
     const unsub = subscribeToPhotos((photos) => {
       if (photos) {
-        if (photos.badmash_profile) setHimPhoto(photos.badmash_profile);
-        if (photos.krishu_profile) setHerPhoto(photos.krishu_profile);
+        if (photos.badmash_profile) setHimPhoto(formatGoogleDriveUrl(photos.badmash_profile));
+        if (photos.krishu_profile) setHerPhoto(formatGoogleDriveUrl(photos.krishu_profile));
       }
     });
     return () => unsub();

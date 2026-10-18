@@ -3,8 +3,9 @@ import { motion } from 'motion/react';
 import { Volume2, VolumeX, RotateCcw } from 'lucide-react';
 import { HerCuteVisual, RabbitIcon } from './VisualAssets.tsx';
 import { InteractiveCandle } from './InteractiveCandle.tsx';
-import { APP_CONFIG } from '../config.ts';
+import { APP_CONFIG, formatGoogleDriveUrl } from '../config.ts';
 import { soundManager } from '../utils/audioPlayer.ts';
+import { subscribeToPhotos } from '../firebase.ts';
 
 interface View4Props {
   onRestart: () => void;
@@ -13,6 +14,19 @@ interface View4Props {
 
 export const View4SoftFinale: React.FC<View4Props> = ({ onRestart, onBack }) => {
   const [isMuted, setIsMuted] = useState(soundManager.isMuted);
+  const [herPhoto, setHerPhoto] = useState<string>(
+    formatGoogleDriveUrl(APP_CONFIG.vsPhotos.herCute || '/images/krishu-id.svg')
+  );
+
+  useEffect(() => {
+    const unsub = subscribeToPhotos((photos) => {
+      if (photos) {
+        const photo = photos.krishu_profile || photos.krishu_id;
+        if (photo) setHerPhoto(formatGoogleDriveUrl(photo));
+      }
+    });
+    return () => unsub();
+  }, []);
 
   // Audio Rule: Immediately crossfade / play "We Fell in Love in October" at volume = 0.20
   useEffect(() => {
@@ -137,7 +151,7 @@ export const View4SoftFinale: React.FC<View4Props> = ({ onRestart, onBack }) => 
         >
           <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden p-1 bg-gradient-to-tr from-pink-300 via-rose-200 to-purple-200 shadow-md shadow-pink-900/10">
             <div className="w-full h-full rounded-full overflow-hidden bg-white">
-              <HerCuteVisual src={APP_CONFIG.vsPhotos.herCute} showLabels={false} />
+              <HerCuteVisual src={herPhoto} showLabels={false} />
             </div>
           </div>
           {/* Subtle line-art rabbit resting in corner */}

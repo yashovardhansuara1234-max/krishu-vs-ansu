@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Disc } from 'lucide-react';
-import { APP_CONFIG } from '../config.ts';
+import { APP_CONFIG, formatGoogleDriveUrl } from '../config.ts';
 import { subscribeToPhotos } from '../firebase.ts';
 
 // Subtle acoustic camera shutter chime synthesizer
@@ -28,15 +28,15 @@ function playShutterChime() {
 }
 
 export const LostAndFoundCard: React.FC = () => {
-  // Permanent photo link synced with Firebase Cloud database
+  // Permanent photo link synced with Firebase Cloud database & Drive proxy
   const [photoSrc, setPhotoSrc] = useState<string>(
-    APP_CONFIG.lostAndFound.photoUrl || '/images/krishu-id.svg'
+    formatGoogleDriveUrl(APP_CONFIG.lostAndFound.photoUrl || '/images/krishu-id.svg')
   );
 
   useEffect(() => {
     const unsub = subscribeToPhotos((photos) => {
       if (photos && photos.krishu_id) {
-        setPhotoSrc(photos.krishu_id);
+        setPhotoSrc(formatGoogleDriveUrl(photos.krishu_id));
       }
     });
     return () => unsub();

@@ -95,7 +95,7 @@ export const MiniSpotifyCard: React.FC<MiniSpotifyCardProps> = ({
   useEffect(() => {
     const unsubscribe = subscribeToSongCovers((covers) => {
       if (covers && covers[song.id]) {
-        setCustomCover(covers[song.id]);
+        setCustomCover(formatGoogleDriveUrl(covers[song.id]));
       }
     });
 
@@ -104,7 +104,7 @@ export const MiniSpotifyCard: React.FC<MiniSpotifyCardProps> = ({
       .then((res) => (res.ok ? res.json() : {}))
       .then((covers: Record<string, string>) => {
         if (covers && covers[song.id]) {
-          setCustomCover((prev) => prev || covers[song.id]);
+          setCustomCover((prev) => prev || formatGoogleDriveUrl(covers[song.id]));
         }
       })
       .catch(() => {});
@@ -113,16 +113,17 @@ export const MiniSpotifyCard: React.FC<MiniSpotifyCardProps> = ({
   }, [song.id]);
 
   const applyCover = async (coverUrl: string) => {
+    const formattedUrl = formatGoogleDriveUrl(coverUrl.trim());
     setIsSaving(true);
     setStatusMessage('Syncing to Firebase database...');
-    setCustomCover(coverUrl);
-    localStorage.setItem(`song_cover_${song.id}`, coverUrl);
+    setCustomCover(formattedUrl);
+    localStorage.setItem(`song_cover_${song.id}`, formattedUrl);
 
     if (makePermanent) {
       try {
         await saveSongCoverToFirestore(
           song.id,
-          coverUrl,
+          formattedUrl,
           song.title,
           song.artist,
           song.colorTheme === 'pink' ? 'her' : 'his'
