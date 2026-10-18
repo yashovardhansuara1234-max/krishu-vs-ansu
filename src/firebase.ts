@@ -73,7 +73,7 @@ export const DEFAULT_DATABASE_PHOTOS: Record<string, { photoId: string; url: str
   },
   badmash_profile: {
     photoId: 'badmash_profile',
-    url: '/images/badmash-cover-2.svg',
+    url: '/images/him-bw.jpg',
     title: 'Badmash Profile Shot',
     target: 'profile',
   },
@@ -103,21 +103,21 @@ export const DEFAULT_DATABASE_COVERS: Record<string, { songId: string; coverUrl:
   },
   b1: {
     songId: 'b1',
-    coverUrl: '/images/badmash-cover-2.svg',
+    coverUrl: '/images/him1.jpg',
     title: 'Warning',
     artist: 'Addi Kalyan',
     side: 'his',
   },
   b2: {
     songId: 'b2',
-    coverUrl: '/images/badmash-cover-1.svg',
+    coverUrl: '/images/him2.jpg',
     title: 'Bauji',
     artist: 'Mohit Ladotiya',
     side: 'his',
   },
   b3: {
     songId: 'b3',
-    coverUrl: '/images/badmash-cover-3.svg',
+    coverUrl: '/images/him3.jpg',
     title: 'Hangova',
     artist: 'Anirudh',
     side: 'his',

@@ -59,7 +59,7 @@ export function formatGoogleDriveUrl(url: string): string {
   return url;
 }
 
-export const HER_PHOTO_URL = "/images/krishu-id.svg";
+export const HER_PHOTO_URL = "/images/krishu-id.jpg";
 
 export const APP_CONFIG: AppConfig = {
   birthdayDate: "2026-10-20T00:00:00",
@@ -68,7 +68,7 @@ export const APP_CONFIG: AppConfig = {
   heroBirthdayMessage: "To the girl who turns ordinary days into the best memories. Happy birthday, Krishu—here is a little soundtrack of us.",
   lostAndFound: {
     id: "20-10",
-    photoUrl: HER_PHOTO_URL,
+    photoUrl: "/images/krishu-id.jpg",
     returnTo: "Badmash",
     signature: "krishu ♡",
   },
@@ -79,8 +79,8 @@ export const APP_CONFIG: AppConfig = {
     "you're officially cooler than him 🌸"
   ],
   vsPhotos: {
-    himGangster: "/images/him-bw.svg",
-    herCute: "/images/krishu-id.svg",
+    himGangster: "/images/him-bw.jpg",
+    herCute: "/images/her-color.jpg",
   },
   finaleSongUrl: "/audio/we-fell-in-love-in-october.mp3",
   herSongs: [
@@ -120,7 +120,7 @@ export const APP_CONFIG: AppConfig = {
       id: "b1",
       title: "Warning",
       artist: "Addi Kalyan",
-      cover: "/images/badmash-cover-2.svg",
+      cover: "/images/him1.jpg",
       audio: "/audio/him1.mp3",
       duration: "02:59",
       synthNotes: [164.81, 196.00, 246.94, 329.63], // Heavy bass gangster groove
@@ -130,7 +130,7 @@ export const APP_CONFIG: AppConfig = {
       id: "b2",
       title: "Bauji",
       artist: "Mohit Ladotiya",
-      cover: "/images/badmash-cover-1.svg",
+      cover: "/images/him2.jpg",
       audio: "/audio/him2.mp3",
       duration: "03:22",
       synthNotes: [174.61, 220.00, 261.63, 349.23], // Raw rhythm and beat
@@ -140,7 +140,7 @@ export const APP_CONFIG: AppConfig = {
       id: "b3",
       title: "Hangova",
       artist: "Anirudh",
-      cover: "/images/badmash-cover-3.svg",
+      cover: "/images/him3.jpg",
       audio: "/audio/him3.mp3",
       duration: "03:15",
       synthNotes: [293.66, 349.23, 440.00, 523.25], // D minor energetic beat

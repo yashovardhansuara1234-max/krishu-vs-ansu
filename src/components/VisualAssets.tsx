@@ -65,6 +65,10 @@ export const SoundwaveBarcode: React.FC<{ isPlaying?: boolean; barColor?: string
 export const HimGangsterVisual: React.FC<{ src?: string }> = ({ src }) => {
   const [loadError, setLoadError] = useState(false);
 
+  useEffect(() => {
+    setLoadError(false);
+  }, [src]);
+
   if (src && !loadError) {
     return (
       <img
