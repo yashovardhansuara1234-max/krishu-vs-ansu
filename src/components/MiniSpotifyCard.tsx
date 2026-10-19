@@ -267,7 +267,7 @@ export const MiniSpotifyCard: React.FC<MiniSpotifyCardProps> = ({
               <h4 className="font-sans font-bold text-xs md:text-sm text-zinc-900 truncate leading-snug">
                 {song.title}
               </h4>
-              {song.id === 'b1' && (
+              {(song.id === 'b1' || song.id === 'h3' || !!song.audio) && (
                 <span className="px-1.5 py-0.2 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-mono font-medium border border-emerald-300">
                   HQ AUDIO
                 </span>

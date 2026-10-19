@@ -110,7 +110,7 @@ export const APP_CONFIG: AppConfig = {
       artist: "Atif Aslam",
       cover: "/images/her3.jpg",
       audio: "/audio/her3.mp3",
-      duration: "04:50",
+      duration: "04:44",
       synthNotes: [293.66, 369.99, 440.00, 587.33], // D major romantic melody
       colorTheme: 'pink'
     }

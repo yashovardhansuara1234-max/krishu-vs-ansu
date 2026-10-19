@@ -166,6 +166,13 @@ export async function seedInitialDatabase() {
         artist: 'Addi Kalyan',
         volume: 0.85,
       },
+      h3: {
+        trackId: 'h3',
+        url: '/audio/her3.mp3',
+        title: 'Tera Naam Doon',
+        artist: 'Atif Aslam',
+        volume: 0.85,
+      },
       finale: {
         trackId: 'finale',
         url: '/audio/we-fell-in-love-in-october.mp3',
@@ -178,11 +185,11 @@ export async function seedInitialDatabase() {
     for (const [key, track] of Object.entries(defaultMusic)) {
       const musicRef = doc(db, 'music', key);
       const snapshot = await getDoc(musicRef);
-      if (!snapshot.exists()) {
+      if (!snapshot.exists() || snapshot.data()?.url !== track.url) {
         await setDoc(musicRef, {
           ...track,
           updatedAt: new Date().toISOString(),
-        });
+        }, { merge: true });
       }
     }
   } catch (err) {
