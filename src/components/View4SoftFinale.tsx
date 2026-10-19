@@ -15,7 +15,7 @@ interface View4Props {
 export const View4SoftFinale: React.FC<View4Props> = ({ onRestart, onBack }) => {
   const [isMuted, setIsMuted] = useState(soundManager.isMuted);
   const [herPhoto, setHerPhoto] = useState<string>(
-    formatGoogleDriveUrl(APP_CONFIG.vsPhotos.herCute || '/images/krishu-id.svg')
+    formatGoogleDriveUrl(APP_CONFIG.vsPhotos.herCute || '/images/her-color.jpg')
   );
 
   useEffect(() => {

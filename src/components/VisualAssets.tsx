@@ -175,19 +175,33 @@ export const CardCoverArt: React.FC<{
   artist: string;
   theme?: 'pink' | 'lavender';
 }> = ({ src, title, artist, theme = 'pink' }) => {
+  const fallbackPhoto = theme === 'pink' ? '/images/her-color.jpg' : '/images/him-bw.jpg';
+  const [currentSrc, setCurrentSrc] = useState<string>(src || fallbackPhoto);
+  const [hasTriedFallback, setHasTriedFallback] = useState(false);
   const [loadError, setLoadError] = useState(false);
 
   useEffect(() => {
+    setCurrentSrc(src || fallbackPhoto);
+    setHasTriedFallback(false);
     setLoadError(false);
-  }, [src]);
+  }, [src, fallbackPhoto]);
 
-  if (src && !loadError) {
+  const handleError = () => {
+    if (!hasTriedFallback && currentSrc !== fallbackPhoto) {
+      setHasTriedFallback(true);
+      setCurrentSrc(fallbackPhoto);
+    } else {
+      setLoadError(true);
+    }
+  };
+
+  if (!loadError) {
     return (
       <img
-        src={src}
+        src={currentSrc}
         alt={`${title} cover`}
         referrerPolicy="no-referrer"
-        onError={() => setLoadError(true)}
+        onError={handleError}
         className="w-full aspect-square rounded-xl object-cover"
       />
     );

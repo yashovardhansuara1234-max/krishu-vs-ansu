@@ -82,11 +82,16 @@ export const MiniSpotifyCard: React.FC<MiniSpotifyCardProps> = ({
   const [isSaving, setIsSaving] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
 
+  const defaultCardPhoto = song.cover || (song.colorTheme === 'pink' ? '/images/her1.jpg' : '/images/him1.jpg');
+
   const [customCover, setCustomCover] = useState<string | null>(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem(`song_cover_${song.id}`);
+      const saved = localStorage.getItem(`song_cover_${song.id}`);
+      if (saved && saved !== '/images/her-color.jpg' && saved !== '/images/him-bw.jpg') {
+        return formatGoogleDriveUrl(saved);
+      }
     }
-    return null;
+    return defaultCardPhoto;
   });
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -95,22 +100,32 @@ export const MiniSpotifyCard: React.FC<MiniSpotifyCardProps> = ({
   useEffect(() => {
     const unsubscribe = subscribeToSongCovers((covers) => {
       if (covers && covers[song.id]) {
-        setCustomCover(formatGoogleDriveUrl(covers[song.id]));
+        const coverVal = covers[song.id];
+        if (coverVal !== '/images/her-color.jpg' && coverVal !== '/images/him-bw.jpg') {
+          setCustomCover(formatGoogleDriveUrl(coverVal));
+        } else {
+          setCustomCover(defaultCardPhoto);
+        }
       }
     });
 
-    // Static fallback check
+    // Static fallback check from server
     fetch('/custom-covers.json')
       .then((res) => (res.ok ? res.json() : {}))
       .then((covers: Record<string, string>) => {
         if (covers && covers[song.id]) {
-          setCustomCover((prev) => prev || formatGoogleDriveUrl(covers[song.id]));
+          const coverVal = covers[song.id];
+          if (coverVal !== '/images/her-color.jpg' && coverVal !== '/images/him-bw.jpg') {
+            setCustomCover(formatGoogleDriveUrl(coverVal));
+          } else {
+            setCustomCover(defaultCardPhoto);
+          }
         }
       })
       .catch(() => {});
 
     return () => unsubscribe();
-  }, [song.id]);
+  }, [song.id, defaultCardPhoto]);
 
   const applyCover = async (coverUrl: string) => {
     const formattedUrl = formatGoogleDriveUrl(coverUrl.trim());

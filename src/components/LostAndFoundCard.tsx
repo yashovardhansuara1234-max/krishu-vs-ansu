@@ -30,7 +30,7 @@ function playShutterChime() {
 export const LostAndFoundCard: React.FC = () => {
   // Permanent photo link synced with Firebase Cloud database & Drive proxy
   const [photoSrc, setPhotoSrc] = useState<string>(
-    formatGoogleDriveUrl(APP_CONFIG.lostAndFound.photoUrl || '/images/krishu-id.svg')
+    formatGoogleDriveUrl(APP_CONFIG.lostAndFound.photoUrl || '/images/krishu-id.jpg')
   );
 
   useEffect(() => {

@@ -116,19 +116,19 @@ export const View2SplitContrast: React.FC<View2Props> = ({ onBack, onNext }) => 
   const [himPhoto, setHimPhoto] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('vs_photo_him');
-      if (saved) return formatGoogleDriveUrl(saved);
+      if (saved && !saved.endsWith('.svg')) return formatGoogleDriveUrl(saved);
     }
-    return formatGoogleDriveUrl(APP_CONFIG.vsPhotos.himGangster || '/images/him-bw.svg');
+    return formatGoogleDriveUrl(APP_CONFIG.vsPhotos.himGangster || '/images/him-bw.jpg');
   });
 
   const [herPhoto, setHerPhoto] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('vs_photo_her');
-      if (saved) return formatGoogleDriveUrl(saved);
+      if (saved && !saved.endsWith('.svg')) return formatGoogleDriveUrl(saved);
       const v1Saved = localStorage.getItem('krishu_uploaded_photo');
-      if (v1Saved) return formatGoogleDriveUrl(v1Saved);
+      if (v1Saved && !v1Saved.endsWith('.svg')) return formatGoogleDriveUrl(v1Saved);
     }
-    return formatGoogleDriveUrl(APP_CONFIG.vsPhotos.herCute || '/images/krishu-id.svg');
+    return formatGoogleDriveUrl(APP_CONFIG.vsPhotos.herCute || '/images/her-color.jpg');
   });
 
   // Photo customization modal state

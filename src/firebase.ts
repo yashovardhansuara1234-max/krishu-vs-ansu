@@ -141,15 +141,19 @@ export async function seedInitialDatabase() {
       }
     }
 
-    // Check & seed song covers
+    // Check & seed song covers (ensure distinct uploaded images are used)
     for (const [key, cover] of Object.entries(DEFAULT_DATABASE_COVERS)) {
       const coverRef = doc(db, 'songCovers', key);
       const snapshot = await getDoc(coverRef);
-      if (!snapshot.exists()) {
+      if (
+        !snapshot.exists() ||
+        snapshot.data()?.coverUrl === '/images/her-color.jpg' ||
+        snapshot.data()?.coverUrl === '/images/him-bw.jpg'
+      ) {
         await setDoc(coverRef, {
           ...cover,
           updatedAt: new Date().toISOString(),
-        });
+        }, { merge: true });
       }
     }
 
